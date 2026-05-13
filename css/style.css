@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    color: #cccccc;
+    background-color: #000000;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0;
+}
+
+/* 컬러소개 라인 */
+.container{}
+section{}
+section .inner{
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+section .inner h1{
+    color: #ffffff;
+    font-size: 4rem;
+    text-align: center;
+}
+
+section .inner .about-me{
+    background-color: #333333;
+    padding: 25px;
+    column-count: 3; /* 컬럼의 갯수 */
+    column-gap: 50px;
+    column-rule: 1px dashed #999999;
+    margin: 20px 0;
+    /* 21 */
+}
+
+section .inner .about-me h2{
+    column-span: all; /* 나눴던 컬럼과 관계없이 모든 단을 합친다 */
+    position: relative;
+    z-index: 1;
+}
+
+section .inner .about-me h2:before{
+    content: '';
+    position: absolute;
+    background-color: rgb(131, 27, 67);
+    width: 200px;
+    height: 20px;
+    z-index: -1;
+    transform: translateX(-40px);
+    transform: translatey(40px);
+}
+
+section .inner .about-me img{
+    width: 100px;
+}
+
+@media(max-width:767px){
+    section .inner{
+        width: 200px;
+    }
+
+    section .inner h1{
+        font-size: 1.5rem;
+    }
+    
+    section .inner .about-me{
+        column-count: 1;
+    }
+}
+
+@media(min-width:768px) and (max-width:1024px){
+    section .inner{
+        width: 100%;
+    }
+
+    section .inner h1{
+        font-size: 2rem;
+    }
+
+    section .inner .about-me{
+        column-count: 2;
+    }
+}
